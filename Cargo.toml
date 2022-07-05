@@ -1,0 +1,21 @@
+[package]
+name = "marketplace-indexer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+near-indexer = { git = "https://github.com/near/nearcore", rev = "af7b459c5f5e8d6ffdaa2c8a7499a84fd66ad388" }
+actix = "0.13.0"
+actix-web = "4.0.1"
+actix-rt = "2"
+clang-sys = { version = "1", features = ["clang_6_0"] }
+openssl-probe = { version = "0.1.2" }
+r2d2 = "0.8.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0.55"
+tokio = { version = "1.1", features = ["sync", "time"] }
+
+[build-dependencies]
+bindgen = {version = "0.56.0", default_features = false, features = ["runtime"]}
